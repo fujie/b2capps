@@ -27,7 +27,21 @@ namespace azure_ad_b2c
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
-                .AddMicrosoftIdentityWebApp(Configuration.GetSection("AzureB2C"));
+                .AddMicrosoftIdentityWebApp(options =>
+                {
+                    Configuration.Bind("AzureB2C", options);
+                    options.Events.OnRemoteFailure = async context =>
+                    {
+                        string message = context.Failure?.Message ?? string.Empty;
+                        if (message.Contains("AADB2C90091"))
+                        {
+                            // canceled
+                            context.Response.Redirect($"{context.Request.PathBase}/Index");
+                        }
+                    };
+                });
+
+
 
             services.AddAuthorization(options =>
             {

@@ -1,15 +1,15 @@
 ﻿<Properties StartupConfiguration="{B0B833B4-60E5-4611-996C-394E33FAE8E0}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="appsettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Startup.cs">
     <Files>
-      <File FileName="Startup.cs" Line="70" Column="1" />
-      <File FileName="appsettings.json" Line="7" Column="1" />
+      <File FileName="Startup.cs" Line="34" Column="1" />
+      <File FileName="appsettings.json" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="azure-ad-b2c" expanded="True">
             <Node name="azure-ad-b2c" expanded="True">
-              <Node name="appsettings.json" selected="True" />
+              <Node name="Startup.cs" selected="True" />
             </Node>
           </Node>
         </State>
